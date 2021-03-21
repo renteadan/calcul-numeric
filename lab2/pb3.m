@@ -11,13 +11,12 @@ function [pSin, pCos] = P3PadeSinCos(x, m, k)
 	n = k+m+1;
 	cSin = [0, 1]; % coeficientii MacLaurin pt. sin
 	cCos = [1]; % coeficientii MacLaurin pt. cos
-	coefA = 1; % k!
-    coefB = 1; % k!
+	coefK = 1; % k!
 	for i = 1: n
-		coefA = - coefA * (2*i); 
-		cCos = [cCos, 0, 1/coefA];
-		coefB = coefB * (2*i+1); 
-		cSin = [cSin, 0, 1/coefB];
+		coefK = - coefK * (2*i); 
+		cCos = [cCos, 0, 1/coefK];
+		coefK = coefK * (2*i+1); 
+		cSin = [cSin, 0, 1/coefK];
 	end
 	pSin = aproxPade(x, cSin, m, k);
 	pCos = aproxPade(x, cCos, m, k);
@@ -26,8 +25,7 @@ end
 function fAprox = aproxPade(x, c, m, k)
 % calculeaza aprximarea Pade rationala pentru o functie f
 % - aproximarea se calculeaza in punctele x (vector)
-% - functia de aproximat este reprezentata prin coeficientii c ai seriei MacLaurin trunchiate: 
-%   c(i) = 1/i! * diff(f, x$(i-1))|x=0
+% - functia de aproximat este reprezentata prin coeficientii c ai seriei MacLaurin trunchiate
 % - m: gradul polinomului de la numaratorul aproximantei
 % - k: gradul polinomului de la numitorul aproximaentei
 % Observatie: 
