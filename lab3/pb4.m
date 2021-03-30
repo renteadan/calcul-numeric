@@ -9,10 +9,6 @@ conditionarePolinom1(2, 20)
 perturbarePolinom1(2, 20, y)
 
 function c = conditionarePolinom1( x, n )
-    % conditionare pt polinomul de forma : (x-1)*(x-2)*...*(x-n) = 0
-    % formula generala pt conditionarea radacinii e la un polinom de grad n
-    % suma i -> 0, n-1 din |ai|*|e^i| / |e*p'(e)|
-
     a = poly(1 : n); % an an-1 an-2 .. a1 a0
     a = a(2 : end); % an-1 an-2 ... a0
     a = fliplr(a); % a0 a1 ... an-1
@@ -34,10 +30,6 @@ function c = conditionarePolinom1( x, n )
 end
 
 function c = conditionarePolinom2( e, n )
-    % conditionare pt polinomul de forma : x^n + 1/2 * x^(n-1) + .. + 1/2^n = 0
-    % formula generala pt conditionarea radacinii e la un polinom de grad n
-    % suma i -> 0, n-1 din |ai|*|e^i| / |e*p'(e)|
-
     a = zeros(n , 1); % coeficientii
     for i = 1:n
         a(i) = 1 / 2^i;
