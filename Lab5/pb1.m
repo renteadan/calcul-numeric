@@ -10,7 +10,7 @@ N = L+U; % A=D-L-U si M = D => M-A=D-D+L+U=L+U=N
 x0=b;
 T = M\N;
 c = M\b;
-for i=1:100 % 100 de iteratii maxim
+for i=1:10000
     x1 = T*x0 + c;
     if (norm(x1-x0)<=((1-norm(T)) * 1e-4)/norm(T)) % criteriu oprire
         break;

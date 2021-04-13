@@ -3,6 +3,8 @@ b = [1;2;3];
 
 sol1 = pb1(A ,b);
 sol2 = pb2(A, b);
+sol3 = gauss(A, b);
 
 disp(sol1);
 disp(sol2);
+disp(sol3);
