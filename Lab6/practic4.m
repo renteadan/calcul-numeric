@@ -1,5 +1,6 @@
 %problema 4 practica
 
+%a();
 b();
 
 function a()
@@ -14,7 +15,7 @@ res = interpolareLagrangeMultiplePoints(nodes, nodevals, t);
 plot(t, res, 'color', rand(1,3));
 hold on;
 
-resexp = 1./(1.+t.*t);
+resexp = 1./(1.+t.^2);
 plot(t, resexp, 'color', rand(1,3));
 hold off;
 end
